@@ -1,0 +1,9 @@
+selenium
+pytest
+pytest-html
+allure-pytest
+behave
+jsonschema
+PyYAML
+requests
+webdriver-manager
