@@ -3,67 +3,62 @@ name: Automated Testing
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: "3.11"
-        cache: 'pip'
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install -r tests/requirements.txt
 
-    - name: Run Tests
-      run: |
-        python -m pytest tests/ --headless --alluredir=allure-results --html=reports/report.html --self-contained-html
+    - name: Run tests
       continue-on-error: true
+      run: |
+        pytest tests/ --headless --alluredir=allure-results
 
     - name: Get Allure history
       uses: actions/checkout@v4
-      if: always()
       continue-on-error: true
       with:
         ref: gh-pages
         path: gh-pages
 
-    - name: Allure Report action
+    - name: Allure Report
       uses: simple-elf/allure-report-action@master
-      if: always()
       with:
         allure_results: allure-results
-        allure_report: allure-report
         gh_pages: gh-pages
         allure_history: allure-history
         keep_reports: 20
 
-    - name: Deploy report to GitHub Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v4  # Actualiza a v4
+    - name: Create redirect to latest
+      run: |
+        LATEST=$(ls -d allure-history/*/ | grep -E '[0-9]+/$' | sort -V | tail -1 | xargs basename)
+        cat > allure-history/index.html << EOF
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta http-equiv="refresh" content="0; url=./$LATEST/index.html">
+          <title>Redirecting to latest report...</title>
+        </head>
+        <body>
+          <p>Redirecting to <a href="./$LATEST/index.html">latest report #$LATEST</a>...</p>
+        </body>
+        </html>
+        EOF
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
         publish_dir: allure-history
-        force_orphan: true  # Crea la rama si no existe
-
-    - name: Upload HTML Report Artifact
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: html-report
-        path: reports/report.html
