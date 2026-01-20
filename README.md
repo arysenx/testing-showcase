@@ -151,7 +151,7 @@ environments:
 
 ### 📉 Robust Reporting
 Generates detailed reports including error traces, duration, and status. Supports both **Pytest-HTML** (portable) and **Allure Reports** (rich visualization).
-![Report Example](https://arysenx.github.io/testing-showcase/11/index.html)
+[Report Example](https://arysenx.github.io/testing-showcase/11/index.html)
 
 ---
 
