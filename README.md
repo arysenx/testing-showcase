@@ -151,7 +151,7 @@ environments:
 
 ### 📉 Robust Reporting
 Generates detailed reports including error traces, duration, and status. Supports both **Pytest-HTML** (portable) and **Allure Reports** (rich visualization).
-![Report Example]()
+![Report Example](https://arysenx.github.io/testing-showcase/11/index.html)
 
 ---
 
@@ -165,7 +165,8 @@ The project uses GitHub Actions for continuous integration.
     1. Checkout Code.
     2. Install Dependencies (`pip install`).
     3. Run Tests in **Headless Mode**.
-    4. Upload Reports (**HTML** & **Allure**) as Artifacts.
+    4. Generate **Allure Reports** with **History Trend**.
+    5. Deploy Reports to **GitHub Pages**.
 
 ---
 
