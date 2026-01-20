@@ -30,7 +30,7 @@ jobs:
         python -m pytest tests/ --headless --alluredir=allure-results --html=reports/report.html --self-contained-html
 
     - name: Build test report
-      uses: simple-elf/allure-report-action@v1.7
+      uses: simple-elf/allure-report-action@v1.9
       if: always()
       with:
         allure_results: allure-results
