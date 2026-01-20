@@ -1,5 +1,0 @@
-*.output
-**\__pycache__
-report.html
-allure-results
-allure-report
