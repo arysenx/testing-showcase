@@ -1,7 +1,7 @@
 import pytest
 import yaml
 from pathlib import Path
-from .common.helpers import parse_config_value
+from tests.common.helpers import parse_config_value
 
 @pytest.fixture(scope="session")
 def config_data():
