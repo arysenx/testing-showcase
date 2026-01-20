@@ -13,7 +13,7 @@ Feature: Login test
  Scenario: User tries to log in - Log in failed
     Given user goes to "[CONF:pages.saucedemo.url]"
       And the "login_page" page is loaded
-     When write "[CONF:users.failure.username]" into "username" fieldº
+     When write "[CONF:users.failure.username]" into "username" field
       And write "[CONF:users.failure.password]" into "password" field
       And click on "login_button" button
      Then "error_container" element is visible
