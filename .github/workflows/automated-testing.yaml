@@ -43,8 +43,8 @@ jobs:
 
     - name: Create redirect to latest
       run: |
-        LATEST=$(ls -d allure-history/*/ | grep -E '[0-9]+/$' | sort -V | tail -1 | xargs basename)
-        cat > allure-history/index.html << EOF
+        LATEST=$(find allure-history -maxdepth 1 -type d -name '[0-9]*' | sed 's|allure-history/||' | sort -n | tail -1)
+        sudo bash -c "cat > allure-history/index.html" << EOF
         <!DOCTYPE html>
         <html>
         <head>
