@@ -1,6 +1,6 @@
 # Testing Showcase Framework
 
-[![CI/CD Status](https://github.com/username/testing-showcase/actions/workflows/automated-testing.yaml/badge.svg)](https://github.com/username/testing-showcase/actions)
+[![CI/CD Status](https://github.com/arysenx/testing-showcase/actions/workflows/automated-testing.yaml/badge.svg)](https://github.com/username/testing-showcase/actions)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://python.org)
 [![Pytest](https://img.shields.io/badge/Pytest-8.0+-green?logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![Selenium](https://img.shields.io/badge/Selenium-4.16-43B02A?logo=selenium&logoColor=white)](https://www.selenium.dev/)
