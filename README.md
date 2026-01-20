@@ -28,7 +28,7 @@ This framework was engineered to demonstrate a **modern, scalable approach to Te
 | **UI Engine** | **Selenium 4** |
 | **Driver Mgmt** | **WebDriver Manager** |
 | **Validation** | **JSONSchema** |
-| **Reporting** | **Pytest-HTML** |
+| **Reporting** | **Pytest-HTML, Allure** |
 | **CI/CD** | **GitHub Actions** |
 
 ---
@@ -114,9 +114,18 @@ python -m pytest tests/ui --headless -v
 python -m pytest tests/ --html=reports/report.html
 ```
 
+**Generate Allure Report:**
+```bash
+# Execute tests
+python -m pytest tests/ --alluredir=allure-results
+
+# Serve report (requires Allure commandline)
+allure serve allure-results
+```
+
 **Run Behave Tests:**
 ```bash
-behave bdd/features
+python -m behave bdd/features
 ```
 
 ---
@@ -141,7 +150,7 @@ environments:
 ```
 
 ### 📉 Robust Reporting
-Generates detailed HTML reports including error traces, duration, and status.
+Generates detailed reports including error traces, duration, and status. Supports both **Pytest-HTML** (portable) and **Allure Reports** (rich visualization).
 ![Report Example]()
 
 ---
@@ -156,7 +165,7 @@ The project uses GitHub Actions for continuous integration.
     1. Checkout Code.
     2. Install Dependencies (`pip install`).
     3. Run Tests in **Headless Mode**.
-    4. Upload HTML Report as Artifact.
+    4. Upload Reports (**HTML** & **Allure**) as Artifacts.
 
 ---
 
