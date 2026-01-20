@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","172","test_get_pokemon_schema_validation","tests.api","Tue Jan 20 12:38:27 UTC 2026","passed","Tue Jan 20 12:38:27 UTC 2026","","test_pokemon","",""
+"","1400","test_login_successful","tests.ui","Tue Jan 20 12:38:34 UTC 2026","passed","Tue Jan 20 12:38:35 UTC 2026","","test_login","",""
+"","637","test_login_failed","tests.ui","Tue Jan 20 12:38:36 UTC 2026","passed","Tue Jan 20 12:38:36 UTC 2026","","test_login","",""
+"","84","test_get_pokemon_by_id_not_found","tests.api","Tue Jan 20 12:38:27 UTC 2026","passed","Tue Jan 20 12:38:27 UTC 2026","","test_pokemon","",""
+"","214","test_get_pokemon_by_name_found","tests.api","Tue Jan 20 12:38:26 UTC 2026","passed","Tue Jan 20 12:38:27 UTC 2026","","test_pokemon","",""
+"","97","test_get_pokemon_by_id_found","tests.api","Tue Jan 20 12:38:27 UTC 2026","passed","Tue Jan 20 12:38:27 UTC 2026","","test_pokemon","",""
+"","85","test_get_pokemon_by_name_not_found","tests.api","Tue Jan 20 12:38:27 UTC 2026","passed","Tue Jan 20 12:38:27 UTC 2026","","test_pokemon","",""
